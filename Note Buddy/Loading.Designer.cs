@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Loading));
             this.loadingImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.loadingImage)).BeginInit();
             this.SuspendLayout();
@@ -36,7 +35,7 @@
             // loadingImage
             // 
             this.loadingImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.loadingImage.Image = ((System.Drawing.Image)(resources.GetObject("loadingImage.Image")));
+            this.loadingImage.Image = global::Note_Buddy.Properties.Resources.Splash;
             this.loadingImage.Location = new System.Drawing.Point(0, 0);
             this.loadingImage.Name = "loadingImage";
             this.loadingImage.Size = new System.Drawing.Size(456, 596);

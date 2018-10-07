@@ -36,7 +36,7 @@ namespace Note_Buddy
         private void LoadLoginImg()
         {
             SqlConnection con = new SqlConnection(DBHandler.GetConnectionString());
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Places WHERE id=2;", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Places WHERE id=1;", con);
             SqlDataAdapter adp = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             try
@@ -65,7 +65,6 @@ namespace Note_Buddy
                 if (con.State == ConnectionState.Open)
                     con.Close();
             }
-            Thread.Sleep(5000);
             this.Close();
         }
         public Bitmap CropBitmap(Bitmap bitmap, int cropX, int cropY, int cropWidth, int cropHeight)

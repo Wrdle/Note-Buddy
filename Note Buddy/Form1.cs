@@ -28,5 +28,35 @@ namespace Note_Buddy
             sidebar.SizeMode = PictureBoxSizeMode.Zoom;
             sidebar.Refresh();
         }
+
+        bool focus = false;
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            if (focus)
+            {
+                txtUsername.BorderStyle = BorderStyle.None;
+                Pen p = new Pen(Color.Red);
+                Graphics g = e.Graphics;
+                int variance = 3;
+                g.DrawRectangle(p, new Rectangle(txtUsername.Location.X - variance, txtUsername.Location.Y - variance, txtUsername.Width + variance, txtUsername.Height + variance));
+            }
+            else
+            {
+                txtUsername.BorderStyle = BorderStyle.FixedSingle;
+            }
+        }
+
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            focus = true;
+            this.Refresh();
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            focus = false;
+            this.Refresh();
+        }
     }
 }
