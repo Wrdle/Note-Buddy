@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Note Buddy", "Note Buddy\Note Buddy.csproj", "{623E9E4D-C28C-49AE-B426-0FC4992A6342}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{623E9E4D-C28C-49AE-B426-0FC4992A6342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623E9E4D-C28C-49AE-B426-0FC4992A6342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623E9E4D-C28C-49AE-B426-0FC4992A6342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623E9E4D-C28C-49AE-B426-0FC4992A6342}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49F14DD2-7AAD-4AA7-BE77-E26291A24528}
+	EndGlobalSection
+EndGlobal

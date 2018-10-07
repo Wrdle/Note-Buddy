@@ -1,0 +1,11 @@
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\bin\Debug\Note Buddy.exe.config
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\bin\Debug\Note Buddy.exe
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\bin\Debug\Note Buddy.pdb
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\obj\Debug\Note Buddy.csprojResolveAssemblyReference.cache
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\obj\Debug\Note_Buddy.Form1.resources
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\obj\Debug\Note_Buddy.Properties.Resources.resources
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\obj\Debug\Note Buddy.csproj.GenerateResource.Cache
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\obj\Debug\Note Buddy.csproj.CoreCompileInputs.cache
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\obj\Debug\Note Buddy.exe
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\obj\Debug\Note Buddy.pdb
+C:\Users\Matt\source\repos\Note Buddy\Note Buddy\obj\Debug\Note_Buddy.Loading.resources
