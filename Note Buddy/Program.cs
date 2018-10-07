@@ -17,7 +17,7 @@ namespace Note_Buddy
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Loading());
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }

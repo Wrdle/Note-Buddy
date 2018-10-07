@@ -52,7 +52,7 @@ namespace Note_Buddy
                     int requiredWidth = Convert.ToInt32(Math.Ceiling(0.5617977528089888M * finalImg.Height));
 
 
-                    Form1.LoginPicture = CropBitmap(finalImg, Convert.ToInt32(finalImg.Width - requiredWidth) / 2, 0, requiredWidth, finalImg.Height);
+                    Login.LoginPicture = CropBitmap(finalImg, Convert.ToInt32(finalImg.Width - requiredWidth) / 2, 0, requiredWidth, finalImg.Height);
                 }
             }
             catch (Exception ex)
