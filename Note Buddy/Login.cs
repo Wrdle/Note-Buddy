@@ -16,17 +16,27 @@ namespace Note_Buddy
     public partial class Login : Form
     {
         public static Bitmap LoginPicture;
+        public static string City;
+        public static string Country;
+
         public Login()
         {
             InitializeComponent();
+            var pos = this.PointToScreen(pnlLocationInfo.Location);
+            pos = imgSidebar.PointToClient(pos);
+            pnlLocationInfo.Parent = imgSidebar;
+            pnlLocationInfo.Location = pos;
+            pnlLocationInfo.BackColor = Color.Transparent;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            sidebar.Image = LoginPicture;
-            sidebar.SizeMode = PictureBoxSizeMode.Zoom;
-            sidebar.Refresh();
+            imgSidebar.Image = LoginPicture;
+            imgSidebar.SizeMode = PictureBoxSizeMode.Zoom;
+            imgSidebar.Refresh();
+            lblCity.Text = City;
+            lblCountry.Text = Country.ToUpper();
         }
 
         bool focus = false;
@@ -57,6 +67,11 @@ namespace Note_Buddy
         {
             focus = false;
             this.Refresh();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

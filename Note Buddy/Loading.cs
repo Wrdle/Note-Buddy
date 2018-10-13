@@ -15,6 +15,7 @@ namespace Note_Buddy
 {
     public partial class Loading : Form
     {
+        DB db = new DB();
         public Loading()
         {
             InitializeComponent();
@@ -23,36 +24,25 @@ namespace Note_Buddy
         private void Loading_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            Task.Factory.StartNew
- (
-  () =>
-  {
-      Thread.Sleep(100);
-      Invoke(new Action(LoadLoginImg));
-  }
- );
+            Task.Factory.StartNew(() =>
+            {
+                Thread.Sleep(500);
+                Invoke(new Action(LoadLoginImg));
+            });
         }
 
         private void LoadLoginImg()
         {
-            SqlConnection con = new SqlConnection(DBHandler.GetConnectionString());
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Places WHERE id=1;", con);
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
+            string query = "SELECT * FROM Places WHERE id=(SELECT FLOOR(RAND()*((SELECT TOP 1 id FROM [Wallpapers].[dbo].[Places] ORDER BY id DESC)-1+1)+1));";
+            var results = db.Select(query);
+
             try
             {
-                if (con.State == ConnectionState.Closed)
-                    con.Open();
-                adp.Fill(dt);
-                if (dt.Rows.Count > 0)
+                if (results.Rows.Count > 0)
                 {
-                    MemoryStream ms = new MemoryStream((byte[])dt.Rows[0]["image"]);
-                    Bitmap finalImg = new Bitmap(Image.FromStream(ms));
-
-                    int requiredWidth = Convert.ToInt32(Math.Ceiling(0.5617977528089888M * finalImg.Height));
-
-
-                    Login.LoginPicture = CropBitmap(finalImg, Convert.ToInt32(finalImg.Width - requiredWidth) / 2, 0, requiredWidth, finalImg.Height);
+                    Login.LoginPicture = createImg(new Bitmap(Image.FromStream(new MemoryStream((byte[])results.Rows[0]["image"]))));
+                    Login.Country = (string)results.Rows[0]["country"];
+                    Login.City = (string)results.Rows[0]["city"];
                 }
             }
             catch (Exception ex)
@@ -60,18 +50,26 @@ namespace Note_Buddy
                 MessageBox.Show(ex.Message, "Error",
                       MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                if (con.State == ConnectionState.Open)
-                    con.Close();
-            }
-            this.Close();
+            db.Dispose();
+            this.Dispose();
         }
-        public Bitmap CropBitmap(Bitmap bitmap, int cropX, int cropY, int cropWidth, int cropHeight)
+
+        public Bitmap createImg(Bitmap finalImage)
         {
-            Rectangle rect = new Rectangle(cropX, cropY, cropWidth, cropHeight);
-            Bitmap cropped = bitmap.Clone(rect, bitmap.PixelFormat);
-            return cropped;
+            int requiredWidth = Convert.ToInt32(Math.Ceiling(0.5617977528089888M * finalImage.Height));
+            finalImage = finalImage.Clone(new Rectangle(Convert.ToInt32(finalImage.Width - requiredWidth) / 2, 0, requiredWidth, finalImage.Height), finalImage.PixelFormat);
+
+            using (Graphics g = Graphics.FromImage(finalImage))
+            {
+                Bitmap Bmp = new Bitmap(finalImage.Width, finalImage.Height);
+                using (Graphics gfx = Graphics.FromImage(Bmp))
+                using (SolidBrush brush = new SolidBrush(Color.FromArgb(70,0,0,0)))
+                {
+                    gfx.FillRectangle(brush, 0, 0, finalImage.Width, finalImage.Height);
+                }
+                g.DrawImage(Bmp, new Rectangle(0, 0, Bmp.Width, Bmp.Height));
+            }
+            return finalImage;
         }
     }
 }

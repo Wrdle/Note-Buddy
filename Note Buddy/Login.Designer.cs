@@ -28,28 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sidebar = new System.Windows.Forms.PictureBox();
+            this.imgSidebar = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnCreateAccount = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.sidebar)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.pnlLocationInfo = new System.Windows.Forms.Panel();
+            this.lblCountry = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSidebar)).BeginInit();
+            this.pnlLogin.SuspendLayout();
+            this.pnlLocationInfo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // sidebar
+            // imgSidebar
             // 
-            this.sidebar.Location = new System.Drawing.Point(690, 0);
-            this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(400, 712);
-            this.sidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sidebar.TabIndex = 1;
-            this.sidebar.TabStop = false;
+            this.imgSidebar.Location = new System.Drawing.Point(690, -5);
+            this.imgSidebar.Name = "imgSidebar";
+            this.imgSidebar.Size = new System.Drawing.Size(403, 720);
+            this.imgSidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgSidebar.TabIndex = 1;
+            this.imgSidebar.TabStop = false;
             // 
             // txtUsername
             // 
@@ -58,7 +63,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtUsername.Location = new System.Drawing.Point(11, 97);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(291, 26);
+            this.txtUsername.Size = new System.Drawing.Size(286, 26);
             this.txtUsername.TabIndex = 4;
             this.txtUsername.Enter += new System.EventHandler(this.textBox1_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.textBox1_Leave);
@@ -66,32 +71,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(7, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.Size = new System.Drawing.Size(77, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Open Sans Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(7, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(75, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "Password";
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.Location = new System.Drawing.Point(11, 165);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(291, 26);
-            this.textBox1.TabIndex = 7;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPassword.Location = new System.Drawing.Point(11, 165);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(286, 26);
+            this.txtPassword.TabIndex = 7;
             // 
             // label3
             // 
@@ -125,19 +130,35 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Make today the best you can!";
             // 
-            // panel1
+            // pnlLogin
             // 
-            this.panel1.Controls.Add(this.btnLogin);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(186, 220);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(317, 270);
-            this.panel1.TabIndex = 11;
+            this.pnlLogin.Controls.Add(this.btnCreateAccount);
+            this.pnlLogin.Controls.Add(this.btnLogin);
+            this.pnlLogin.Controls.Add(this.label4);
+            this.pnlLogin.Controls.Add(this.label5);
+            this.pnlLogin.Controls.Add(this.txtUsername);
+            this.pnlLogin.Controls.Add(this.label1);
+            this.pnlLogin.Controls.Add(this.label2);
+            this.pnlLogin.Controls.Add(this.txtPassword);
+            this.pnlLogin.Location = new System.Drawing.Point(191, 220);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(307, 270);
+            this.pnlLogin.TabIndex = 11;
+            // 
+            // btnCreateAccount
+            // 
+            this.btnCreateAccount.BackColor = System.Drawing.Color.DarkGray;
+            this.btnCreateAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCreateAccount.FlatAppearance.BorderSize = 0;
+            this.btnCreateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateAccount.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAccount.ForeColor = System.Drawing.Color.White;
+            this.btnCreateAccount.Location = new System.Drawing.Point(157, 208);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Size = new System.Drawing.Size(139, 38);
+            this.btnCreateAccount.TabIndex = 12;
+            this.btnCreateAccount.Text = "Create Account";
+            this.btnCreateAccount.UseVisualStyleBackColor = false;
             // 
             // btnLogin
             // 
@@ -153,39 +174,82 @@
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // Form1
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.BackColor = System.Drawing.Color.Transparent;
+            this.lblCity.Font = new System.Drawing.Font("Open Sans Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.ForeColor = System.Drawing.Color.White;
+            this.lblCity.Location = new System.Drawing.Point(2, 0);
+            this.lblCity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(134, 47);
+            this.lblCity.TabIndex = 12;
+            this.lblCity.Text = "Tokoyo";
+            this.lblCity.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // pnlLocationInfo
+            // 
+            this.pnlLocationInfo.Controls.Add(this.lblCountry);
+            this.pnlLocationInfo.Controls.Add(this.lblCity);
+            this.pnlLocationInfo.Location = new System.Drawing.Point(717, 600);
+            this.pnlLocationInfo.Name = "pnlLocationInfo";
+            this.pnlLocationInfo.Size = new System.Drawing.Size(343, 78);
+            this.pnlLocationInfo.TabIndex = 0;
+            // 
+            // lblCountry
+            // 
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.BackColor = System.Drawing.Color.Transparent;
+            this.lblCountry.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountry.ForeColor = System.Drawing.Color.White;
+            this.lblCountry.Location = new System.Drawing.Point(6, 43);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(51, 20);
+            this.lblCountry.TabIndex = 13;
+            this.lblCountry.Text = "label6";
+            // 
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1089, 711);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1089, 710);
+            this.Controls.Add(this.pnlLocationInfo);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.sidebar);
+            this.Controls.Add(this.imgSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sidebar)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSidebar)).EndInit();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
+            this.pnlLocationInfo.ResumeLayout(false);
+            this.pnlLocationInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox sidebar;
+        private System.Windows.Forms.PictureBox imgSidebar;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnCreateAccount;
+        private System.Windows.Forms.Label lblCity;
+        private System.Windows.Forms.Panel pnlLocationInfo;
+        private System.Windows.Forms.Label lblCountry;
     }
 }
 
