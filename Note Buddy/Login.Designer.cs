@@ -63,7 +63,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtUsername.Location = new System.Drawing.Point(11, 97);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(286, 26);
+            this.txtUsername.Size = new System.Drawing.Size(296, 26);
             this.txtUsername.TabIndex = 4;
             this.txtUsername.Enter += new System.EventHandler(this.textBox1_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.textBox1_Leave);
@@ -95,7 +95,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPassword.Location = new System.Drawing.Point(11, 165);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(286, 26);
+            this.txtPassword.Size = new System.Drawing.Size(296, 26);
             this.txtPassword.TabIndex = 7;
             // 
             // label3
@@ -140,9 +140,9 @@
             this.pnlLogin.Controls.Add(this.label1);
             this.pnlLogin.Controls.Add(this.label2);
             this.pnlLogin.Controls.Add(this.txtPassword);
-            this.pnlLogin.Location = new System.Drawing.Point(191, 220);
+            this.pnlLogin.Location = new System.Drawing.Point(188, 220);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(307, 270);
+            this.pnlLogin.Size = new System.Drawing.Size(318, 270);
             this.pnlLogin.TabIndex = 11;
             // 
             // btnCreateAccount
@@ -155,7 +155,7 @@
             this.btnCreateAccount.ForeColor = System.Drawing.Color.White;
             this.btnCreateAccount.Location = new System.Drawing.Point(157, 208);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(139, 38);
+            this.btnCreateAccount.Size = new System.Drawing.Size(150, 38);
             this.btnCreateAccount.TabIndex = 12;
             this.btnCreateAccount.Text = "Create Account";
             this.btnCreateAccount.UseVisualStyleBackColor = false;

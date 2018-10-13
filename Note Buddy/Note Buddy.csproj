@@ -45,7 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
     <Compile Include="DB.cs" />
+    <Compile Include="Encryption.cs" />
+    <Compile Include="GlobalVariables.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

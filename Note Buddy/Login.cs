@@ -71,7 +71,10 @@ namespace Note_Buddy
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            if (Account.Login(txtUsername.Text, txtPassword.Text) == true)
+                MessageBox.Show("yay");
+            else
+                MessageBox.Show("no fun");
         }
     }
 }

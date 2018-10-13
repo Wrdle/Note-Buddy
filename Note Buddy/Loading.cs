@@ -33,6 +33,7 @@ namespace Note_Buddy
 
         private void LoadLoginImg()
         {
+            db.ConnectWallpapers();
             string query = "SELECT * FROM Places WHERE id=(SELECT FLOOR(RAND()*((SELECT TOP 1 id FROM [Wallpapers].[dbo].[Places] ORDER BY id DESC)-1+1)+1));";
             var results = db.Select(query);
 
